@@ -3253,7 +3253,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.156, y: 0.268}
+  m_AnchoredPosition: {x: 0.046, y: 0.175}
   m_SizeDelta: {x: 575, y: 323}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &698342064
@@ -12309,6 +12309,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 698342066}
+  LuzMonitores: []
+  Luces: {fileID: 0}
 --- !u!1 &1106984141
 GameObject:
   m_ObjectHideFlags: 0
@@ -17875,6 +17877,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UIManager: {fileID: 104239710}
   Luca: {fileID: 1222835363}
+  lightsManager: {fileID: 1460351333}
 --- !u!1 &1216400346
 GameObject:
   m_ObjectHideFlags: 0
@@ -19030,6 +19033,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Lights: {fileID: 1541210865}
   LuzMonitores: []
+  canvas: {fileID: 698342066}
+  instrucciones: {fileID: 1729512026}
+  lucesEncendidas: 0
 --- !u!4 &1460351334
 Transform:
   m_ObjectHideFlags: 0
@@ -19180,7 +19186,7 @@ GameObject:
   - component: {fileID: 1541210866}
   m_Layer: 0
   m_Name: '*Luces'
-  m_TagString: Untagged
+  m_TagString: Luces
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20473,8 +20479,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -20.2}
-  m_SizeDelta: {x: 169.36508, y: 68.806}
+  m_AnchoredPosition: {x: 0, y: -20}
+  m_SizeDelta: {x: 220.12744, y: 70.48543}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1729512026
 MonoBehaviour:
@@ -20496,7 +20502,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10

@@ -8,6 +8,7 @@ TagManager:
   - mesa
   - MoniorLuz
   - LuzMonitor
+  - Luces
   layers:
   - Default
   - TransparentFX

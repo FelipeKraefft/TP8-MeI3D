@@ -37,6 +37,5 @@ public class LucaSays : MonoBehaviour
             Time.timeScale = 1;
             Luca.text = "Ya te dije que la contraseña es -DaroNoEsta-"; 
         }
-    }
-    
+    }    
 }
