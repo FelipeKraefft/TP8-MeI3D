@@ -23,6 +23,7 @@ public class UIManager : MonoBehaviour
         {
             Time.timeScale = 1;
             start.SetActive(false);
+            LucaSays.SetActive(false);
         }
     }
     
