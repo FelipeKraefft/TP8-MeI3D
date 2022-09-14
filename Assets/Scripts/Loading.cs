@@ -6,17 +6,23 @@ using UnityEngine.UI;
 public class Loading : MonoBehaviour
 {
     public Text txtloading;
+
+    GameObject loadingScreen;
+    public GameObject passScreen;
+
+    [SerializeField] Text persentaje;
     [SerializeField] GameObject[] loading;
 
     // Start is called before the first frame update
     void Start()
     {
-        loading = GameObject.FindGameObjectsWithTag("LoadingBar");
-        
+        loadingScreen = GameObject.Find("LoadingScreen");
+
         foreach (GameObject load in loading)
         {
             load.SetActive(false);
         }
+        persentaje.text = "0%";
     }
 
     // Update is called once per frame
@@ -36,44 +42,43 @@ public class Loading : MonoBehaviour
         }
 
 
-        if (Mathf.Floor(Time.time) % 15 == 0){
+        if (Mathf.Floor(Time.time) % 17 == 2){
             loading[0].SetActive(true);
+            persentaje.text = "7%";
         }
 
-        else if (Mathf.Floor(Time.time) % 15 == 1){
+        else if (Mathf.Floor(Time.time) % 17 == 4){
             loading[1].SetActive(true);
-        }
-
-        else if (Mathf.Floor(Time.time) % 15 == 3){
             loading[2].SetActive(true);
-        }
-
-        else if (Mathf.Floor(Time.time) % 15 == 5){
             loading[3].SetActive(true);
+            persentaje.text = "36%";
         }
 
-        else if (Mathf.Floor(Time.time) % 15 == 6){
+        else if (Mathf.Floor(Time.time) % 17 == 5){
             loading[4].SetActive(true);
+            persentaje.text = "50%";
         }
 
-        else if (Mathf.Floor(Time.time) % 15 == 7){
+        else if (Mathf.Floor(Time.time) % 17 == 8){
             loading[5].SetActive(true);
-        }
-
-        else if (Mathf.Floor(Time.time) % 15 == 8){
             loading[6].SetActive(true);
+            persentaje.text = "85%";
         }
 
-        else if (Mathf.Floor(Time.time) % 15 == 9){
+        else if (Mathf.Floor(Time.time) % 17 == 9){
             loading[7].SetActive(true);
-        }
-
-        else if (Mathf.Floor(Time.time) % 15 == 10){
             loading[8].SetActive(true);
+            persentaje.text = "99%";
         }
 
-        else if (Mathf.Floor(Time.time) % 15 == 14){
+        else if (Mathf.Floor(Time.time) % 17 == 14){
             loading[9].SetActive(true);
+            persentaje.text = "100%";
+        }
+
+        else if (Mathf.Floor(Time.time) % 17 == 16){
+            loadingScreen.SetActive(false);
+            passScreen.SetActive(true);
         }
     }
 }
