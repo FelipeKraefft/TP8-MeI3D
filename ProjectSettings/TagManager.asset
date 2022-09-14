@@ -9,6 +9,7 @@ TagManager:
   - MoniorLuz
   - LuzMonitor
   - Luces
+  - LoadingBar
   layers:
   - Default
   - TransparentFX
