@@ -9,14 +9,13 @@ public class CheckPassword : MonoBehaviour
     public GameObject Incorrect;
     public GameObject Correct;
 
-    GameObject PassScreen;
-    GameObject MiniGame;
+    public GameObject PassScreen;
+    public GameObject MiniGame;
 
     // Start is called before the first frame update
     void Start()
     {
-        PassScreen = GameObject.Find("PassScreen");
-        MiniGame = GameObject.Find("MiniGame");
+        
     }
 
     // Update is called once per frame
