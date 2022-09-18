@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,7 +7,6 @@ public class MemoTest : MonoBehaviour
 {
     public GameObject question;
     public GameObject memoT;
-    public GameObject rentry;
     public GameObject win;
     public Texture[] tag;
     RawImage img;
@@ -15,6 +14,7 @@ public class MemoTest : MonoBehaviour
     [SerializeField] GameObject[] pieces;
     [SerializeField] int[] randoms = new int[18];
 
+    int cont;
     bool canCheck;
     bool canPress;
     [SerializeField] bool allCorrect;
@@ -25,9 +25,14 @@ public class MemoTest : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        cont = 0;
         firstClick = true;
         randoms = randomArray0to8();
         canPress = true;
+
+        question.SetActive(true);
+        memoT.SetActive(false);
+        win.SetActive(false);
 
         for (int i = 0; i < 18; i++)
         {
@@ -55,7 +60,7 @@ public class MemoTest : MonoBehaviour
         memoT.SetActive(true);
     }
 
-    void WinGame()
+    public void WinGame()
     {
         memoT.SetActive(false);
         win.SetActive(true);
@@ -113,12 +118,15 @@ public class MemoTest : MonoBehaviour
                 firstClick = true;
                 Invoke("HidePieces", .5f);
                 canCheck = false;
+                cont++;
             }   
             
         }
         
     }
 
+    
+    
 
     void HideTags() {
         firstTag.SetActive(false);
@@ -129,20 +137,12 @@ public class MemoTest : MonoBehaviour
         canPress = true;
     }
 
-
-    bool CheckWin(){
-        bool win = true;
-        for (int i = 0; i < 18; i++)
-        {
-            if(!pieces[i].activeSelf){
-                win = false;
-            }
-        }
-        return win;
-    }
-
     void HidePieces(){
         firstTag.transform.parent.gameObject.SetActive(false);
         secondTag.transform.parent.gameObject.SetActive(false);
+    }
+
+    bool CheckWin(){
+        return cont == 9;
     }
 }

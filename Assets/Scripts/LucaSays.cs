@@ -10,6 +10,8 @@ public class LucaSays : MonoBehaviour
     public LightsManager lightsManager;
     public bool TalkedToLuca;
     public Text instructions;
+    public AudioSource audioSource;
+    public AudioClip[] audioClips;
     [SerializeField] bool TalkedToLucaBefore;
     [SerializeField] int cont;
 
@@ -19,6 +21,7 @@ public class LucaSays : MonoBehaviour
         lightsManager = GameObject.Find("[LightsManager]").GetComponent<LightsManager>();
         TalkedToLuca = false;
         cont = 0;
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -37,6 +40,8 @@ public class LucaSays : MonoBehaviour
         if(col.gameObject.tag == "Player" && !lightsManager.lucesEncendidas && !TalkedToLucaBefore){
             ActivarUI();
             Luca.text = "¿Qué haces aca? Enciende las luces primero";
+            audioSource.clip = audioClips[0];
+            audioSource.Play();
             TalkedToLucaBefore = true;
             cont++;
         }
@@ -45,6 +50,8 @@ public class LucaSays : MonoBehaviour
             ActivarUI();
             TalkedToLucaBefore = true;
             Luca.text = "Ya te dije que vayas a prender las luces primero";
+            audioSource.clip = audioClips[1];
+            audioSource.Play();
             cont++;
         }
 
@@ -52,6 +59,8 @@ public class LucaSays : MonoBehaviour
             ActivarUI();
             TalkedToLuca = true;
             Luca.text = "Holaa!  Escuche lo que paso, la contraseña que necesitas es -DaroNoEsta-";
+            audioSource.clip = audioClips[2];
+            audioSource.Play();
             TalkedToLucaBefore = true;
             cont++;
         }
@@ -60,6 +69,8 @@ public class LucaSays : MonoBehaviour
             ActivarUI();
             TalkedToLuca = true;
             Luca.text = "Bien hecho! Ya puedes entrar a la computadora, acordate de la contraseña -DaroNoEsta-";
+            audioSource.clip = audioClips[3];
+            audioSource.Play();
             cont++;
         }
 
